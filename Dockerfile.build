@@ -4,6 +4,6 @@ RUN gu install native-image
 COPY . /home/app/hello-world
 WORKDIR /home/app/hello-world
 
-RUN native-image --no-server -cp build/libs/hello-world-*-all.jar
+RUN native-image --no-server -cp build/libs/hello-world-*-all.jar hello.world.Application
 EXPOSE 8080
 ENTRYPOINT [ "/home/app/hello-world/hello-world" ]
