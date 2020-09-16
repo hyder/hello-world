@@ -22,10 +22,11 @@ pipeline {
         sh 'gradle assemble'
       }
     }
-    stage('Dockerize') { // Compile and do unit testing
-      steps {
-        sh 'echo $CWD'
-      }
+    stage('Build Image') {
+        agent any
+        steps {
+          sh 'docker build -f /var/lib/jenkins/workspace/hello-world/Dockerfile.build -t helloworld /var/lib/jenkins/workspace/hello-world'
+        }
     }        
   }
 }
