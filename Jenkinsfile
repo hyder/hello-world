@@ -20,13 +20,14 @@ pipeline {
       steps {
         // run Gradle to do packaging
         sh 'gradle assemble'
+        sh 'docker build -f Dockerfile.build -t helloworld .'        
       }
     }
     stage('Build Image') {
         agent any
         steps {
           sh 'pwd'
-          sh 'docker build -f Dockerfile.build -t helloworld .'
+        //  sh 'docker build -f Dockerfile.build -t helloworld .'
         }
     }        
   }
