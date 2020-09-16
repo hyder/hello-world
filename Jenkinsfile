@@ -25,7 +25,7 @@ pipeline {
     stage('Build Image') {
         agent any
         steps {
-          //sh 'docker build -f Dockerfile.build -t helloworld helloworld'
+          //sh 'docker build -f Dockerfile.build -t helloworld .'
           sh 'pwd'
         }
     }        
