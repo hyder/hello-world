@@ -21,6 +21,11 @@ pipeline {
         // run Gradle to do packaging
         sh 'gradle assemble'
       }
-    }    
+    }
+    stage('Dockerize') { // Compile and do unit testing
+      steps {
+        sh 'echo $CWD'
+      }
+    }        
   }
 }
