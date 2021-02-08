@@ -13,13 +13,13 @@ pipeline {
     stage('CompileAndTest') { // Compile and do unit testing
       steps {
         // run Gradle to execute compile and unit testing
-        sh 'gradle clean compileJava test'
+        sh './gradlew clean compileJava test'
       }
     }
     stage('Package') { // Compile and do unit testing
       steps {
         // run Gradle to do packaging
-        sh 'gradle assemble'
+        sh './gradlew assemble'
         sh 'docker build -f Dockerfile.build -t helloworld .'        
       }
     }
