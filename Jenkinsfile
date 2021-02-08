@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    gradle 'gradle6'
+    gradle 'gradle'
   }
   stages {
     stage('Source') { // Get code
